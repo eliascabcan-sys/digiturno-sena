@@ -1,0 +1,88 @@
+
+* {
+    box-sizing: border-box;
+    }
+    
+    *:focus {
+      outline: none;
+    }
+    body {
+    background: linear-gradient(135deg, rgb(212, 175, 55)  0%, #539dff 100%);
+            color: #444;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+    }
+    .login {
+    margin: 20px auto;
+    width: 500px;
+    }
+    .login-screen {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 100px;
+    }
+    
+    .app-title {
+    text-align: center;
+    color: rgb(212, 175, 55);
+    }
+    
+    .login-form {
+    text-align: center;
+    }
+    .control-group {
+    margin-bottom: 10px;
+    }
+    
+    input {
+    text-align: center;
+    background-color: #ECF0F1;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+    width: 250px;
+    transition: border .5s;
+    }
+    
+    input:focus {
+    border: 2px solid #1216f0;
+    box-shadow: none;
+    }
+    h1{
+      font-size: 3em;
+    }
+    
+    .btn {
+      border: 2px solid transparent;
+      background: #004094;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 25px;
+      padding: 10px 0;
+      text-decoration: none;
+      text-shadow: none;
+      border-radius: 10px;
+      box-shadow: none;
+      transition: 0.25s;
+      display: block;
+      width: 250px;
+      margin: 0 auto;
+    }
+    
+    .btn:hover {
+      background-color: #2980B9;
+    }
+    
+    .login-link {
+      font-size: 12px;
+      color: #444;
+      display: block;
+      margin-top: 12px;
+    }   
+                                      
+              

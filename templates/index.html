@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="Tooplate">
+
+        <title>Florida Blanca Sede A-Digiturnos</title>
+
+        
+     <!-- CSS Locales -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-icons.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-waso-strategy.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+
+<!-- CDN opcional de iconos -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        
+
+
+
+    </head>
+    
+    <body id="section_1">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container mt-3">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+
+        <header class="site-header" >
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-3 col-md-5 col-7">
+                        <p class="text-white mb-0">
+                            <i class="bi-clock site-header-icon me-2 icono-blanco"></i>
+                            Lun-Vie 6:15 A.M-6:20 P.M
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-5">
+                        <p class="text-white mb-0">
+                            <a href="tel:14382344" class="text-white">
+                                <i class="bi-telephone site-header-icon me-2 icono-blanco"></i>
+                               14382344
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12 ms-auto">
+                        <ul class="social-icon">
+
+                            <li>
+                            <a href="#">
+                             <img src="{{ url_for('static', filename='images/Escudo.png') }}" alt="Escudo"  style="width: 28px; height: 28px; border-radius: 50%;"> </a> </li>
+
+                            <li><a href="https://www.facebook.com/Educacionbogota" class="social-icon-link bi-facebook" target="_blank"></a></li>
+
+                          
+
+                            <li><a href="https://youtu.be/mlpgvtCnIX4?si=-yOABYgjIHLntD8x" class="social-icon-link bi-youtube" target="_blank"></a></li>
+
+                            
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+            <div class="container">
+                
+
+                <a href="#" class="navbar-brand"><img  src="{{ url_for('static', filename='images/logo.png') }}" width="100" height="100" alt=""><strong>FloridaBlanca <span class="tur"> Digiturnos </span> </strong> </a> 
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1"><span class="tur2"> Inicio </span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2"><span class="tur2"> Información </span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3"><span class="tur2"> Horarios</span></a>
+                        </li>
+
+            
+
+                        <li class="nav-item">
+                            <li class="nav-item">
+                             <a class="nav-link click-scroll" href="#section_5"><span class="tur2"> Sugerencias </span></a>
+                        </li>
+
+                        </li>
+                    </ul>
+                <div>
+                        
+            </div>
+        </nav>
+
+        <main>
+
+            <section class="hero">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+
+                        <div id="carouselExampleCaptions" class="carousel carousel-fade hero-carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="container position-relative h-100">
+                                        <div class="carousel-caption d-flex flex-column justify-content-center">
+                                            <small class="small-title">Educación tradicional  <strong class="color-dorado">académica.</strong></small>
+
+                                            <h1>Más que un colegio <span class="color-dorado">una comunidad de</span> aprendizaje</h1>
+
+                                            <div class="d-flex align-items-center mt-4">
+                                                <a class="custom-btn btn custom-link" href="{{ url_for('regis') }}">Registrarse</a>
+
+                                                <a class="popup-youtube custom-icon d-flex ms-4" href="https://youtu.be/mlpgvtCnIX4?si=GINW1AgVaUAfpuWn">
+                                                    <i class="bi-play play-icon d-flex m-auto text-white"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-image-wrap">
+                                        <img src="{{ url_for('static', filename='images/titeres-016.jpg') }}" class="img-fluid carousel-image" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="container position-relative h-100">
+                                        <div class="carousel-caption d-flex flex-column justify-content-center">
+                                            <small class="small-title">+20 Años de  <strong class="text-warning">Experiencia</strong></small>
+
+                                            <h1>IED Colegio Floridablanca <span class="color-dorado">Sede A</span></h1>
+
+                                            <div class="d-flex align-items-center mt-4">
+                                                <a class="custom-btn btn custom-link" href="{{ url_for('regis') }}">Registrarse</a>
+
+                                                <a class="popup-youtube custom-icon d-flex ms-4" href="https://youtu.be/mlpgvtCnIX4?si=GINW1AgVaUAfpuWn">
+                                                    <i class="bi-play play-icon d-flex m-auto text-white"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-image-wrap">
+                                        <img  src="{{ url_for('static', filename='images/slide/colegio1.jpg') }}" alt="Colegio 1" class="img-fluid carousel-image" alt="">
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <div class="about-image-wrap h-100">
+                                <img src="{{ url_for('static', filename='images/celadora.jpeg') }}" class="img-fluid about-image" alt="">
+
+                                <div class="about-image-info">
+                                    <h4 class="text-white">Celadores Del Colegio Floridablanca  <a href="#"><img src="{{ url_for('static', filename='images/Escudo.png') }}"alt="Escudo"  style="width: 32px; height: 32px; border-radius: 50%;"></a>
+                                                   </h4>
+
+                                    <p class="text-white mb-0">La experiencia de los celadoras muestra una necesidad importante de mejorar la gestión de turnos. Aunque la mayoría no ha 
+                                        tenido problemas graves, un 42.9% sí reporta dificultades, 
+                                        lo que evidencia oportunidades de mejora. Todas las celadoras valoran positivamente la implementación de un sistema digital, destacando la facilidad de uso</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12 d-flex flex-column">
+                            <div class="about-thumb bg-white shadow-lg">
+                                
+                                <div class="about-info">
+                                    <small class="small-title">+ <strong class="text-warning">20 años de experiencia</strong></small>
+
+                                    <h2 class="mb-3">Información Institucional</h2>
+
+                                    
+
+                                    <p>Entidad educativa pública comprometida con la formación integral de niños y jóvenes en los niveles de básica primaria y secundaria. 
+                                        Esta sede se destaca por su enfoque innovador y sostenible, siendo pionera en el uso de energías renovables en el ámbito escolar, gracias a la implementación 
+                                        de un sistema fotovoltaico en 2019, lo que permitió la autogeneración de energía para dos salas de informática, beneficiando a más de 800 estudiantes.</p>
+                                        
+                                    <p>La institución se rige por un Proyecto Educativo Institucional (PEI) que impulsa la participación de toda la comunidad educativa, 
+                                        promoviendo el desarrollo académico, social y ético de sus estudiantes. <a href="https://www.tooplate.com/contact">contact page</a>. Thank you.</p>
+                                </div>
+                            </div>
+
+                            <div class="row h-100">
+                                <div class="col-lg-6 col-6">
+                                    <div class="about-thumb d-flex flex-column justify-content-center bg-danger mb-lg-0 h-100" style="background: url('images/services/FONDO4.avif') no-repeat center center; background-size: cover">
+                                        
+                                        <div class="about-info" >
+                                            <h5 class="text-white mb-4">"Registrate aqui" </h5>
+
+                                            <a class="custom-btn btn custom-bg-primary" href="{{ url_for('regis') }}">Registrarse</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-6">
+                                    <div class="about-thumb d-flex flex-column justify-content-center bg-warning mb-lg-0 h-100" style="background: url('images/services/FONDO4.avif') no-repeat center center; background-size: cover">
+                                        
+                                        <div class="about-info">
+                                            <h5 class="text-white mb-4">"Iniciar sesión"</h5>
+
+                                            <a class="custom-btn btn custom-bg-primary"  href="{{ url_for('login') }}">Inicia Sesión</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="services section-padding" id="section_3">
+  <div style="background: url(/static/images/fondo.jpg) no-repeat center center; background-size: cover;">
+
+    <div class="container">
+      <div class="row">
+        <!-- Título -->
+        <div class="col-lg-10 col-12 text-center mx-auto mb-5">
+          <h2 class="h22">
+            <span class="color-blanco">Horarios-<span class="color-dorado">Turnos</span></span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Columna Izquierda (Nav con texto) -->
+        <div class="col-lg-6 col-12">
+          <nav>
+            <div class="nav nav-tabs flex-column align-items-baseline" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-business-tab" data-bs-toggle="tab" data-bs-target="#nav-business" type="button" role="tab" aria-controls="nav-business" aria-selected="true">
+                <h3 class="color-blanco">Matutino</h3>
+                <span>
+                  La jornada de los vigilantes inicia desde las 6:00 a.m., asegurando la apertura y supervisión de los accesos al colegio. 
+                  Durante el día, su labor consiste en controlar el ingreso y salida de estudiantes, personal y visitantes.
+                </span>
+              </button>
+
+              <button class="nav-link" id="nav-video-tab" data-bs-toggle="tab" data-bs-target="#nav-video" type="button" role="tab" aria-controls="nav-video" aria-selected="false">
+                <h3 class="color-blanco">Nocturno</h3>
+                <span>
+                  La jornada nocturna de los vigilantes comienza a las 6:00 p.m., al cierre de las actividades escolares. Durante la noche,
+                  su labor principal es custodiar las instalaciones, realizar rondas periódicas, controlar accesos no autorizados y responder ante cualquier emergencia.
+                </span>
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Columna Derecha (Contenido dinámico) -->
+        <div class="col-lg-6 col-12">
+          <div class="tab-content" id="nav-tabContent">
+            <!-- Matutino -->
+            <div class="tab-pane fade show active" id="nav-business" role="tabpanel" aria-labelledby="nav-business-tab">
+              <img src="{{ url_for('static', filename='images/Matutino.jpg') }}" class="img-fluid rounded shadow" alt="Matutino">
+
+              <h5 class="mt-4 mb-2"><span class="color-dorado">Jornada Laboral LUNES-VIERNES</span></h5>
+              <ul>
+                <li class="color-blanco">Hora de Llegada = 5:00 A.M</li>
+                <li class="color-blanco">Inicio Jornada Laboral = 6:00 A.M</li>
+                <li class="color-blanco">Final Jornada Laboral = 6:20 P.M</li>
+              </ul>
+            </div>
+
+            <!-- Nocturno -->
+            <div class="tab-pane fade" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab">
+              <img src="{{ url_for('static', filename='images/nocturno.jpg') }}" class="img-fluid rounded shadow" alt="Nocturno">
+
+              <h5 class="mt-4 mb-2"><span class="color-dorado">Jornada Nocturna LUNES-VIERNES</span></h5>
+              <p class="color-blanco">Hora de Llegada = 5:50 P.M</p>
+              <p class="color-blanco">Inicio Jornada Laboral = 6:20 P.M</p>
+              <p class="color-blanco">Final Jornada Laboral = 6:00 A.M</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+            <section class="contact" id="section_5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0a1f44" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+                <div class="contact-container-wrap">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-6 col-12">
+                   <!--Funcion action paarq que funcione con flask-->>            
+                                <form class="custom-form contact-form" action="{{ url_for('contacto') }}" method="post" role="form">
+                                    <small class="small-title">Contactanos <strong class="text-white">24 Horas</strong></small>
+
+                                    <h2 class="mb-5">Sugerencias</h2>
+                                    <p class="color-blanco">Dejanos tu sugerencias!!!</p>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">                                    
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="">
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12">         
+                                            <input type="email" name="personal" id="personal"  class="form-control" placeholder="Correo electronico" required="">
+                                        </div>
+
+                                        <div class="col-12">
+                                            <textarea class="form-control" rows="7" id="message" name="message" placeholder="Escribe tu sugerencia"></textarea>
+
+                                            <button type="submit" class="form-control">Enviar</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        
+                            <div class="col-lg-6 col-12">
+                                <div class="contact-thumb">
+                                    
+                                    <div class="contact-info bg-white shadow-lg">
+                                        <h4 class="mb-4"> Cl. 70A #94 - 38, Bogotá</h4>
+
+                                        <h4 class="mb-2">
+                                            <a href="tel: 240-480-9600">
+                                                <i class="bi-telephone contact-icon me-2"></i>
+                                                14382344
+                                            </a>
+                                        </h4>
+
+                                        <h5>
+                                            <a href="mailto:info@company.com" class="footer-link">
+                                                <i class="bi-envelope-fill contact-icon me-2"></i>
+                                                escdifloridablanca10@educacionbogota.edu.co
+                                            </a>
+                                        </h5>
+                                        
+                                        
+                                        
+                                        <iframe width="470px" height="400px"  src="https://www.google.com/maps/embed?pb=!3m2!1ses-419!2sco!4v1745958318925!5m2!1ses-419!2sco!6m8!1m7!1slJy7bSPKjkhW0ZxdSVQWOQ!2m2!1d4.697700183415863!2d-74.11388068247132!3f7.4848924!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+
+
+                                        </iframe>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        
+           
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                        
+                    <div class="col-lg-6 col-12">
+                        <div class="site-footer-wrap d-flex align-items-center">
+                            <p class="copyright-text mb-0 me-4">Copyright © Colegio Floridablanca Digiturnos</p>
+
+                            <ul class="social-icon">
+                                <li><a href="https://www.facebook.com/Educacionbogota" class="social-icon-link bi-facebook" target="_blank"></a></li>
+                                 <li><a href="https://youtu.be/mlpgvtCnIX4?si=-yOABYgjIHLntD8x" class="social-icon-link bi-youtube" target="_blank"></a></li>
+                                <li><a href="#"><img src="{{ url_for('static', filename='images/Escudo.png') }}"alt="Escudo"  style="width: 34px; height: 34px; border-radius: 50%;"></a></li>
+                                
+                                </ul>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-12">
+                    	<p class="copyright-text mb-0 me-4"> <a href="https://www.tooplate.com/" target="_blank">2025</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/magnific-popup-options.js') }}"></script>
+<script src="{{ url_for('static', filename='js/click-scroll.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script>
+  setTimeout(() => {
+    let alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => {
+      let bsAlert = new bootstrap.Alert(alert);
+      bsAlert.close();
+    });
+  }, 3000); // 3 segundos
+</script>
+
+
+    </body>
+</html>

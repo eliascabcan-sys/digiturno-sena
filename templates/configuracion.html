@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración - Usuario - Digiturnos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body {
+      display: flex;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #004094;
+      color: white;
+      min-height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #f9d55c;
+    }
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      width: 100%;
+    }
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 220px;
+      right: 0;
+      background-color: #dde0e2;
+      height: 60px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 20px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .profile img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra lateral -->
+  
+<div class="sidebar">
+  <h2 class="text-center mt-2 fw-bold">Panel Usuario</h2>
+
+  <a href="{{ url_for('usuario') }}"><i class="bi bi-calendar"></i> Mis Turnos</a>
+  <a href="{{ url_for('configuracion') }}"><i class="bi bi-gear"></i> Configuración</a>
+  <a href="{{ url_for('usuario_notificar') }}"><i class="bi bi-exclamation-circle"></i> Notificar problema</a>
+  <a href="{{ url_for('logout') }}"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
+</div>
+
+
+  <!-- Barra superior -->
+  <div class="topbar">
+    <div class="profile">
+      <span>{{ session['usuario'] }}</span>
+      <i class="bi bi-person-circle"></i>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content mt-5">
+    <h2 class="text-primary mb-4">Configuración de Cuenta</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form method="POST">
+          <div class="mb-3">
+            <label for="nueva_contrasena" class="form-label">Nueva Contraseña</label>
+            <input type="password" name="nueva_contrasena" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmar_contrasena" class="form-label">Confirmar Contraseña</label>
+            <input type="password" name="confirmar_contrasena" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-success">Actualizar Contraseña</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

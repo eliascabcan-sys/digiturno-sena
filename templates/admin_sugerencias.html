@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sugerencias - Admin - Digiturnos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body { display: flex; }
+    .sidebar {
+      width: 220px; background-color: #004094; color: white;
+      min-height: 100vh; position: fixed; left: 0; top: 0; padding-top: 60px;
+    }
+    .sidebar a { display: block; color: white; padding: 12px 20px; text-decoration: none; }
+    .sidebar a:hover { background-color: #f9d55c; }
+    .content { margin-left: 220px; padding: 20px; width: 100%; }
+    .topbar {
+      position: fixed; top: 0; left: 220px; right: 0;
+      background-color: #dde0e2; height: 60px;
+      display: flex; justify-content: flex-end; align-items: center;
+      padding: 0 20px; border-bottom: 1px solid #dee2e6;
+    }
+    .profile { display: flex; align-items: center; gap: 10px; }
+    .profile img { width: 35px; height: 35px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+
+  <!-- Barra lateral -->
+  <div class="sidebar">
+    <h3 class="text-center mb-4">Panel de Admin</h3>
+    <a href="{{ url_for('admin') }}"><i class="bi bi-calendar"></i> Turnos</a>
+    <a href="{{ url_for('admin_usuarios') }}"><i class="bi bi-people"></i> Usuarios</a>
+    <a href="{{ url_for('reportes') }}"><i class="bi bi-bar-chart"></i> Reportes</a>
+    <a href="{{ url_for('admin_notificaciones') }}"><i class="bi bi-bell"></i> Notificaciones</a>
+    <a href="{{ url_for('admin_sugerencias') }}"><i class="bi bi-chat-left-text"></i> Sugerencias</a>
+    <a href="{{ url_for('configuracion_admin') }}"><i class="bi bi-gear"></i> Configuración</a>
+    <a href="{{ url_for('logout') }}"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
+  </div>
+
+  <!-- Barra superior -->
+  <div class="topbar">
+    <div class="profile">
+      <span>{{ session['usuario'] }}</span>
+      <img src="{{ url_for('static', filename='images/admin.png') }}" alt="Foto Admin">
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content mt-5">
+    <h2 class="text-primary">Sugerencias de Usuarios</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    {% if sugerencias %}
+    <table class="table table-bordered table-striped mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Mensaje</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in sugerencias %}
+        <tr>
+          <td>{{ s.nombre }}</td>
+          <td>{{ s.correo }}</td>
+          <td>{{ s.mensaje }}</td>
+          <td>{{ s.fecha }}</td>
+          <td>
+            {% if s.leido == 1 %}
+              <span class="badge bg-success">Leído</span>
+            {% else %}
+              <span class="badge bg-warning text-dark">No leído</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if s.leido == 0 %}
+            <a href="{{ url_for('sugerencia_leida', sug_id=s.id) }}" class="btn btn-sm btn-success">
+              <i class="bi bi-check2-circle"></i>
+            </a>
+            {% endif %}
+            <a href="{{ url_for('sugerencia_eliminar', sug_id=s.id) }}" class="btn btn-sm btn-danger"
+               onclick="return confirm('¿Seguro que deseas eliminar esta sugerencia?');">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p class="alert alert-info">No hay sugerencias registradas.</p>
+    {% endif %}
+  </div>
+
+</body>
+</html>
